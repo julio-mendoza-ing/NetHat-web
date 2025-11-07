@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "lucide-react": "^0.553.0",
+    "patch-package": "^8.0.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "recharts": "^3.3.0"
+    "react-slick": "^0.31.0",
+    "recharts": "^3.3.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
