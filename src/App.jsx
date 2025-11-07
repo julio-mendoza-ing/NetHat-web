@@ -203,102 +203,128 @@ export default function NetHatWebsite() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">Contáctanos</h2>
-            <p className="text-xl text-slate-600">Estamos listos para ayudarte a impulsar tu negocio</p>
-          </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Mail className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg text-slate-800">Email</h4>
-                  <p className="text-slate-600">contacto@nethatsolutions.com</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Phone className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg text-slate-800">Teléfono</h4>
-                  <p className="text-slate-600">+52 (123) 456-7890</p>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <MapPin className="w-6 h-6 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg text-slate-800">Ubicación</h4>
-                  <p className="text-slate-600">Hidalgo, México</p>
-                </div>
-              </div>
+      <section id="contacto" className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-slate-800 mb-4">Contáctanos</h2>
+              <p className="text-xl text-slate-600">Estamos listos para ayudarte a impulsar tu negocio</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-xl shadow-lg">
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Nombre completo"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Correo electrónico"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
-                />
-                <input
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  placeholder="Teléfono"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
-                />
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            <div className="grid md:grid-cols-2 gap-12">
+              
+              {/* === COLUMNA DE INFORMACIÓN DE CONTACTO (MODIFICADA) === */}
+              <div className="space-y-6">
+                
+                {/* 1. Email (Enlace mailto:) */}
+                <a 
+                    href="mailto:contacto@nethatso.com" 
+                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition duration-300"
                 >
-                  <option value="">Selecciona un servicio</option>
-                  <option value="web">Diseño y Desarrollo Web</option>
-                  <option value="redes">Redes y Cableado</option>
-                  <option value="marketing">Marketing Digital</option>
-                  <option value="contabilidad">Servicios Contables</option>
-                </select>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Cuéntanos sobre tu proyecto"
-                  rows="4"
-                  required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
-                ></textarea>
-                <button type="submit" className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
-                  Enviar Mensaje
-                </button>
+                  <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                    {/* Usando Mail, asumiendo que está importado */}
+                    <Mail className="w-6 h-6 text-blue-600" /> 
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-slate-800">Email</h4>
+                    <p className="text-slate-600">contacto@nethatso.com</p>
+                  </div>
+                </a>
+
+                {/* 2. Teléfono (Enlace WhatsApp wa.me) */}
+                <a 
+                    href="https://wa.me/527713345126" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition duration-300"
+                >
+                  <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                    {/* Usando Phone, asumiendo que está importado */}
+                    <Phone className="w-6 h-6 text-blue-600" /> 
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-slate-800">Teléfono (WhatsApp)</h4>
+                    <p className="text-slate-600">+52 (771) 334-5126</p>
+                  </div>
+                </a>
+
+                {/* 3. Ubicación (Opcional: Enlace a Google Maps) */}
+                <a 
+                    href="https://www.google.com/maps/search/Hidalgo,+Mexico" // Puedes cambiar esto por una dirección específica
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-start space-x-4 p-4 rounded-lg hover:bg-slate-50 transition duration-300"
+                >
+                  <div className="bg-blue-100 p-3 rounded-lg flex-shrink-0">
+                    {/* Usando MapPin, asumiendo que está importado */}
+                    <MapPin className="w-6 h-6 text-blue-600" /> 
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg text-slate-800">Ubicación</h4>
+                    <p className="text-slate-600">Hidalgo, México</p>
+                  </div>
+                </a>
               </div>
-            </form>
+
+              {/* === COLUMNA DEL FORMULARIO (SIN CAMBIOS) === */}
+              <form onSubmit={handleSubmit} className="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-xl shadow-lg">
+                <div className="space-y-4">
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Nombre completo"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Correo electrónico"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Teléfono"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                  />
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                  >
+                    <option value="">Selecciona un servicio</option>
+                    <option value="web">Diseño y Desarrollo Web</option>
+                    <option value="redes">Redes y Cableado</option>
+                    <option value="marketing">Marketing Digital</option>
+                    <option value="contabilidad">Servicios Contables</option>
+                  </select>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Cuéntanos sobre tu proyecto"
+                    rows="4"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-blue-600 focus:ring-2 focus:ring-blue-200 outline-none transition"
+                  ></textarea>
+                  <button type="submit" className="w-full bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                    Enviar Mensaje
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
       </section>
 
       {/* Footer */}
